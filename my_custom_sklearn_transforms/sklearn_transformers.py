@@ -27,13 +27,13 @@ class RegLinInputer(BaseEstimator, TransformerMixin):
     
     def transform(self, X):
         data = X.query('{0} == {0}'.format(self.target))
-        print(data.shape)
+        #print(data.shape)
                 
         Xrl = data[self.features]
-        print(Xrl.head())
+        #print(Xrl.head())
 
         yrl = data[self.target]
-        print(yrl.head())
+        #print(yrl.head())
 
         reg = LinearRegression()
         reg.fit(Xrl, yrl)
